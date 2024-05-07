@@ -1,0 +1,137 @@
+body {
+    margin: 0px ;
+    padding: 0px; 
+    background-color: darksalmon;
+    
+}
+
+header {
+    
+    margin-left: 0px  ;
+    text-align: center ;
+    width: 100% ;
+    z-index: 999 ;
+    padding: 15px ;
+    color : var(--color-text);
+    display: flex ;
+    justify-content: space-around ;
+    align-items: center ;
+}
+
+.regions{
+    display:flex ;
+    flex-direction: row ;
+    flex-wrap: wrap ;
+    justify-content: space-evenly;
+
+    
+}
+
+.area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 250px ;
+    height: min-content ;
+    border: 2px solid #ff0000;
+    list-style: none ;
+    background-color: lightskyblue;
+    text-shadow : 0px 4px 8px rgba(0,0,0,.3) ;
+    font-size: 1.6rem;
+    border-radius: 10px;
+    align-items: center ;
+    padding: 10px ;
+}
+
+.area h6 {
+    color:yellow ;
+    margin:5px;
+    /* margin-top:20px ; */
+
+}
+
+.main-content {
+    margin-top : 100px ;
+    display: flex ;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.content-table {
+    border-collapse :collapse ;
+    margin: 50px  ;
+    font-size: 0.9rem ;
+    /* min-width: 450px ; */
+    border-radius: 5px 5px 0 0 ;
+    overflow: hidden ;
+    box-shadow: 0 0 20px rgba(0,0,0,.3);
+    align-self: center ;
+}
+
+.selected {
+    text-align: center;
+    color: lightskyblue ;
+}
+.mapdiv {
+    width: 80% ;
+    height:500px ;
+}
+
+.active.content-table {
+    display: none ;
+}
+.content-table caption{
+    font-size: 1.8em ;
+    font-weight:bold ;
+    margin-bottom : 15px ;
+}
+
+.content-table th {
+    font-size: 1.2em ;
+    padding: 5px ;
+}
+
+.content-table thead tr {
+    
+    background-color: #00cf68 ;
+    color: white ;
+    text-align: left ;
+    font-weight: bold ;
+}
+
+.content-table tbody th, 
+.content-table tbody td
+ {
+
+    padding: 12px 15px ;
+
+
+}
+
+.content-table tbody tr {
+    border-bottom : 1px solid #dddddd ;
+    background-color: white ;
+    color: black ;
+}
+
+.content-table tbody tr.active:nth-of-type(odd) {
+    background-color: #ffaa00 ;
+    color: yellow;
+}
+.content-table tbody tr.active:nth-of-type(even) {
+    background-color: #ffaa00 ;
+    color: yellow;
+}
+
+
+
+.content-table tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+
+
+.content-table tbody tr:last-of-type{
+    border-bottom: 4px solid #009879 ;
+}

@@ -1,0 +1,8 @@
+Name, Type, Latitude, Longitude, Comment,Website
+Olympia,Home,47.0379,-122.9007,AirBnB,https://www.experienceolympia.com
+Ralph Munro Trail,Hike,47.0456, -122.9725,Easy hike,https://www.wta.org/go-hiking/hikes/ralph-munro-trail
+Nisqually National Wildlife Trail,Hike, 47.0727726,-122.7153037,Numerous short walks,https://www.wta.org/go-hiking/hikes/nisqually-nwr
+Darlin Creek Preserve,Hike,46.9596865,-123.0416855,Short walks,https://www.wta.org/go-hiking/hikes/darlin-creek-preserve
+Capitol Sate Forest - Sherman Creek Loop,Hike,46.9386, -123.1300,7 mile loop,https://www.wta.org/go-hiking/hikes/sherman-creek
+Millersvania State Park,Hike,46.9113, -122.9113,Hikes,https://www.wta.org/go-hiking/hikes/millersylvania-state-park
+Frye County Park,Picnic,47.1165, -122.9665,Picnic and Walks,https://www.wta.org/go-hiking/hikes/frye-cove-county-park

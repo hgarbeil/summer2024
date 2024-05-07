@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summer 2024</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbrand">
+            <h1 class="logo">Summer 2024</h1>
+        </div>
+        
+        <a href="#" class="toggle-button" >
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+        </a>
+         
+        <div class="navbar-links">
+            <ul>
+                <li><a href="#" onclick="loadArea(0)">Indianola</a></li>
+                <li><a href="#" onclick="loadArea(1);">Olympia</a></li>
+                <li><a href="#" onclick="loadArea(2);">Eugene</a></li>
+                <li><a href="#" onclick="loadArea(3);">Chicago</a></li>
+            </ul>
+        </div>
+
+
+    </header>
+    <div class="regions">
+        <div class="area">
+            <li><a href="#" onclick="loadArea(0);">Wash-Indianola</a></li>
+            <h6>July 25 - Aug 12 2024</h4>
+        </div>
+        <div class="area">
+            <li><a href="#" onclick="loadArea(1);">Wash-Olympia</a></li>
+            <h6>August 15 - 19 2024</h4>
+        </div>
+        <div class="area">
+            <li><a href="#" onclick="loadArea(2);">Eugene</a></li>
+            <h6>August 12 - 15, 2024</h6>
+
+        </div>
+        <div class="area">
+            <li><a href="#" onclick="loadArea(3);">Chicago</a></li>
+            <h6>August 21 - 28, 2024</h6>
+            
+        </div>
+    </div>
+    <!-- <div>
+        <h1 class="selected">Washington</h2>
+    </div> -->
+    <div class="main-content">
+
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"></script>
+    <script src="scripts/ajax-utils.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+Name, Type, Latitude, Longitude, Comment,Website
+Indianola,Home, 47.7470, -122.5257,Home,https://www.visitkitsap.com/indianola
+Poulsbo,Town, 47.7359, -122.6465, Shopping,https://www.visitkitsap.com/poulsbo
+Dungeness Spit,Hike, 48.1748, -123.1477, 10 (o and b) mile spit walk,https://www.wta.org/go-hiking/hikes/dungeness-national-wildlife-refuge
+Hurricane Ridge Road,Hike,48.0787495,-124.0280, Various hikes,https://www.nps.gov/olym/planyourvisit/visiting-hurricane-ridge.htm
