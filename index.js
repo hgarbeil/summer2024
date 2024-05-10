@@ -2,18 +2,23 @@
 let regionNum = 0 ;
 let zoomNum = 10 ;
 let regions =['Wash-Indianola','Wash-Olympia','Oregon-Eugene','Chicago','Toronto'] ;
+let dates =['July 25 - Aug 12', 'Aug 15 - 18', 'Aug 12 - 15','Aug 21 - 28', 'Aug 28 - Sep 15'] ;
+let zoomList = [10,10,14,12,15] ;
 let regionName = regions[regionNum] ;
 const mainEl = document.querySelector('.main-content') ;
 // const selectedText = document.querySelector('.selected')
-const titleEl = document.querySelector('h1.logo');
-let cent_coords = [[47.7470, -122.5257],[47.0379, -122.9007],[44.0521, -123.0868],[41.8781, -87.6298],
+let cent_coords = [[47.7470, -122.5257],[47.0379, -122.9007],[44.0521, -123.0868],[41.8309286, -87.59272],
 [43.6532,-79.3832]] ;
 let map ;
 var tableEl = document.createElement('table') ;
+const titleEl = document.querySelector('h1.logo');
+const dateEl = document.querySelector('#datefield') ;
 tableEl.classList.add ('content-table') ;
 var theadEl = document.createElement("thead");
 var tbodyEl = document.createElement("tbody");
+
 let activFile = "data/Wash_activ.txt";
+let dateString = dates[0] ;
 
 
 let markerOptions = {
@@ -41,11 +46,17 @@ var parkIcon =  L.icon({
     iconUrl: 'data/icons8-park-50.png',
     iconSize: [32,32]
 });
+var schoolIcon =  L.icon({
+    iconUrl: 'data/icons8-university-30.png',
+    iconSize: [32,32]
+});
 
 
 function loadArea (id){
     
     regionNum = id ;
+    zoomNum = zoomList[id] ;
+    dateString = dates[id];
     if (regionNum==0){
         activFile = "data/Wash_activ.txt"
     }
@@ -64,20 +75,18 @@ function loadArea (id){
     regionName = regions[id];
     // selectedText.innerHTML = regionName ;
     titleEl.innerHTML = "Summer 2024 :  "+regionName ;
+    dateEl.innerHTML = dateString ;
     console.log (id+"  : "+activFile);
     loadMap(regionNum) ;
     loadTable();
 }
 
 function loadMap (regionNumber){
-    if (regionNumber==2) {
-        zoomNum = 14 ;
-    }
-    else zoomNum = 12 ;
+    
     if (map != undefined) { map.remove(); } 
     map = L.map('mapid').setView(cent_coords[regionNumber], zoomNum);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
+    maxZoom: zoomNum+10,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 }
@@ -132,6 +141,9 @@ function loadTable (){
             }
             if (cells[1]=='Park'){
                 markerOptions.icon = parkIcon ;
+            }
+            if (cells[1]=='School'){
+                markerOptions.icon = schoolIcon ;
             }
             // console.log(cells[2]+' Lon : '+cells[3])
             var marker = L.marker([cells[2],cells[3]],markerOptions)

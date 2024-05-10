@@ -1,1 +1,5 @@
 Name, Type, Latitude, Longitude, Comment,Website
+Weber House,Home,43.6943803,-79.435692,Approx location of housesit (Eglington train station)
+Moore Park Ravine Trail,Hike,43.69474,-79.3806,Easy 3.9 mile loop,https://www.alltrails.com/explore/trail/canada/ontario/moore-park-ravine-trail-loop?u=i
+Leslie Street Spit Trail,Hike,43.6434653,-79.3266073,Easy 7.6 mile spit walk,https://www.alltrails.com/explore/trail/canada/ontario/leslie-street-spit-trail?u=i
+Toronto Islands Park,Hike,43.62966,-79.39122,Hike via Toronto Island Ferry,https://www.alltrails.com/trail/canada/ontario/toronto-islands-trail
