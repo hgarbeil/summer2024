@@ -1,2 +1,3 @@
 Name, Type, Latitude, Longitude, Comment,Website
-AirBnb,Home,41.8009286,-87.5927271,AirBnB,https://www.airbnb.com/trips/v1/cf9a58da-68a1-4d9b-b9b2-b28414891437/ro/RESERVATION2_CHECKIN/HM3QZQCBJM?c=.pi80.pkdmlyYWxpdHkvc2hhcmVfaXRpbmVyYXJ5&euid=7a05572d-29e1-9df4-b183-ba62f78da8ed
+AirBnb,Home, 41.8009286, -87.59272,AirBnB,https://www.airbnb.com/trips/v1/cf9a58da-68a1-4d9b-b9b2-b28414891437/ro/RESERVATION2_CHECKIN/HM3QZQCBJM?c=.pi80.pkdmlyYWxpdHkvc2hhcmVfaXRpbmVyYXJ5&euid=7a05572d-29e1-9df4-b183-ba62f78da8ed
+Millenium Park,Park,41.8826,-87.6226,City Park,https://www.chicago.gov/city/en/depts/dca/supp_info/millennium_park.html

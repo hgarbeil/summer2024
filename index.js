@@ -1,12 +1,13 @@
 
 let regionNum = 0 ;
 let zoomNum = 10 ;
-let regions =['Wash-Indianola','Wash-Olympia','Oregon-Eugene','Chicago'] ;
+let regions =['Wash-Indianola','Wash-Olympia','Oregon-Eugene','Chicago','Toronto'] ;
 let regionName = regions[regionNum] ;
 const mainEl = document.querySelector('.main-content') ;
 // const selectedText = document.querySelector('.selected')
 const titleEl = document.querySelector('h1.logo');
-let cent_coords = [[47.7470, -122.5257],[47.0379, -122.9007],[44.0521, -123.0868],[41.8781, -87.6298]] ;
+let cent_coords = [[47.7470, -122.5257],[47.0379, -122.9007],[44.0521, -123.0868],[41.8781, -87.6298],
+[43.6532,-79.3832]] ;
 let map ;
 var tableEl = document.createElement('table') ;
 tableEl.classList.add ('content-table') ;
@@ -36,6 +37,10 @@ var townIcon = L.icon({
     iconUrl: 'data/icons8-town-24.png',
     iconSize: [32,32]
 });
+var parkIcon =  L.icon({
+    iconUrl: 'data/icons8-park-50.png',
+    iconSize: [32,32]
+});
 
 
 function loadArea (id){
@@ -52,6 +57,9 @@ function loadArea (id){
     }
     if (regionNum==3){
         activFile = "data/chicago_activ.txt"
+    }
+    if (regionNum==4){
+        activFile = "data/toronto_activ.txt"
     }
     regionName = regions[id];
     // selectedText.innerHTML = regionName ;
@@ -122,6 +130,10 @@ function loadTable (){
             if (cells[1]=='Town'){
                 markerOptions.icon = townIcon ;
             }
+            if (cells[1]=='Park'){
+                markerOptions.icon = parkIcon ;
+            }
+            // console.log(cells[2]+' Lon : '+cells[3])
             var marker = L.marker([cells[2],cells[3]],markerOptions)
             marker.bindPopup("<b>"+cells[0]+"</b>").openPopup();
             marker.addTo(map) ;

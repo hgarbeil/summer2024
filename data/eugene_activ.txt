@@ -3,3 +3,4 @@ Eugene,Home,44.052,-123.0868,AirBnB,https://www.eugenecascadescoast.org/eugene/
 Rexius Trail,Hike,44.031889,-123.1264371,Easy hike through town,https://www.alltrails.com/trail/us/oregon/rexius-trail
 Willamette River Trail,Hike,44.0594613,-123.0837851,Bike and walk paths eugene to springfield,https://www.eugenecascadescoast.org/listing/ruth-bascom-riverbank-path-system-(willamette-river-trail)/981/
 Spencer Butte Park,Hike,43.9876759,-123.0960903, Two trails to summit of Spencer Butte,https://www.eugene-or.gov/facilities/facility/details/spencerbuttepark-158
+Ridgeline Trail System,Hike,43.9876759,-123.0960903, Trailhead at spencer butte park,https://www.eugene-or.gov/Facilities/Facility/Details/129
