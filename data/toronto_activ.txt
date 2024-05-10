@@ -1,0 +1,1 @@
+Name, Type, Latitude, Longitude, Comment,Website
