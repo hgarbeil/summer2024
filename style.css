@@ -5,6 +5,10 @@ body {
     
 }
 
+header {
+    background-color: lightsalmon;
+
+}
 /* header {
     
     margin-left: 0px  ;
@@ -19,6 +23,11 @@ body {
     align-items: center ;
 } */
 
+.toplevel{
+    display: flex ;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
 .regions{
     visibility: hidden;
     display:flex ;
@@ -28,16 +37,19 @@ body {
 
     
 }
+
 h1 {
     text-align: center ;
 }
 
+.navbar {
+    align-self: flex-end ;
+}
 .navbar ul {
     list-style-type: none;
     background-color: hsl(0,0%,25%);
     background-color: hsl(59, 19%, 60%);
     padding: 0px;
-    margin:0px;
     overflow: hidden ;
 
 }

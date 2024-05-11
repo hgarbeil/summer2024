@@ -3,7 +3,7 @@ let regionNum = 0 ;
 let zoomNum = 10 ;
 let regions =['Wash-Indianola','Wash-Olympia','Oregon-Eugene','Chicago','Toronto'] ;
 let dates =['July 25 - Aug 12', 'Aug 15 - 18', 'Aug 12 - 15','Aug 21 - 28', 'Aug 28 - Sep 15'] ;
-let zoomList = [10,10,14,12,15] ;
+let zoomList = [10,10,14,12,13] ;
 let regionName = regions[regionNum] ;
 const mainEl = document.querySelector('.main-content') ;
 // const selectedText = document.querySelector('.selected')
@@ -199,6 +199,7 @@ function loadTable (){
 
 mainEl.innerHTML=`
 <div id="mapid" class="mapdiv"></div>`;
+loadArea(0);
 loadMap(regionNum) ;
 loadTable() ;
 
