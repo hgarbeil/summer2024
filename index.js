@@ -1,14 +1,13 @@
 
-let regionNum = 0 ;
 let zoomNum = 10 ;
 let regions =['Wash-Indianola','Wash-Olympia','Oregon-Eugene','Chicago','Toronto'] ;
+let impref = ['Washington','Washington','Oregon','Chicago','Toronto'] ;
 let dates =['July 25 - Aug 12', 'Aug 15 - 18', 'Aug 12 - 15','Aug 21 - 28', 'Aug 28 - Sep 15'] ;
 let zoomList = [10,10,14,12,13] ;
 let regionName = regions[regionNum] ;
 const mainEl = document.querySelector('.main-content') ;
 // const selectedText = document.querySelector('.selected')
-let cent_coords = [[47.7470, -122.5257],[47.0379, -122.9007],[44.0521, -123.0868],[41.8309286, -87.59272],
-[43.6532,-79.3832]] ;
+
 let map ;
 var tableEl = document.createElement('table') ;
 const titleEl = document.querySelector('h1.logo');
@@ -16,6 +15,9 @@ const dateEl = document.querySelector('#datefield') ;
 tableEl.classList.add ('content-table') ;
 var theadEl = document.createElement("thead");
 var tbodyEl = document.createElement("tbody");
+const bodyEl = document.getElementsByTagName('body')[0] ;
+const navItems = document.querySelectorAll('.navarea') ;
+
 
 let activFile = "data/Wash_activ.txt";
 let dateString = dates[0] ;
@@ -52,11 +54,36 @@ var schoolIcon =  L.icon({
 });
 
 
+function showWeather(boolbaby){
+    weatherMode = boolbaby ;
+    if (boolbaby){
+        updateWeather(cent_coords[regionNum][0],cent_coords[regionNum][1]);
+    } else {
+        mainEl.innerHTML=`
+        <div id="mapid" class="mapdiv"></div>`;
+        loadArea(regionNum);
+        // loadMap(regionNum) ;
+        // loadTable() ;
+    }
+}
+
+
+// Function called when the area is changed, either update weather or map
 function loadArea (id){
     
     regionNum = id ;
     zoomNum = zoomList[id] ;
     dateString = dates[id];
+    
+    for (elnum in navItems) {
+        navItems[elnum].classList = "navarea";
+
+    }
+    navItems[id].classList = "navarea selected" ;
+    if (weatherMode){
+        showWeather(true);
+        return ;
+    }
     if (regionNum==0){
         activFile = "data/Wash_activ.txt"
     }
@@ -76,9 +103,15 @@ function loadArea (id){
     // selectedText.innerHTML = regionName ;
     titleEl.innerHTML = "Summer 2024 :  "+regionName ;
     dateEl.innerHTML = dateString ;
+    let bimage =  'url("https://source.unsplash.com/1200x1200/?'+impref[id]+'?summer")' ;
+    bodyEl.style.backgroundImage = bimage ;
+    
     console.log (id+"  : "+activFile);
     loadMap(regionNum) ;
     loadTable();
+    mainEl.appendChild (tableEl) ;
+    tableEl.appendChild (theadEl) ;
+
 }
 
 function loadMap (regionNumber){
@@ -93,14 +126,14 @@ function loadMap (regionNumber){
 
 
 function loadTable (){
-    console.log("opening "+activFile);
+    //console.log("opening "+activFile);
     theadEl.innerHTML="" ;
     tbodyEl.innerHTML="" ;
     $ajaxUtils.sendGetRequest (activFile, function(responseText){
-        console.log(responseText);
+        //console.log(responseText);
         var lines = responseText.split('\n');
         const firstline = lines.shift () ;
-        //console.log[lines];
+        console.log[lines];
         var heads = firstline.split(",");
         var myTr = document.createElement ("tr") ;
         myTr.classList.add ('tr-head') ;  
@@ -196,12 +229,13 @@ function loadTable (){
     } ;
     
 
-
+console.log("ready to load");
 mainEl.innerHTML=`
 <div id="mapid" class="mapdiv"></div>`;
 loadArea(0);
 loadMap(regionNum) ;
 loadTable() ;
+
 
 
 
