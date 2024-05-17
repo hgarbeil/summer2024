@@ -5,6 +5,7 @@ body {
     background-image : url("https://source.unsplash.com/1200x1200/?oregon?summer") ;
     background-size : cover ;
     background-repeat : no-repeat ;
+    font-family : sans-serif ;
     
 }
 
@@ -30,6 +31,7 @@ header {
     display: flex ;
     flex-direction: row;
     justify-content: space-evenly;
+    color: lightyellow ;
 }
 .regions{
     visibility: hidden;
@@ -200,4 +202,54 @@ div.rbutton label {
 
 .content-table tbody tr:last-of-type{
     border-bottom: 4px solid #009879 ;
+}
+
+.weather-tile {
+    /* background-image : url("https://source.unsplash.com/400x400/?iceland?night?sky") ;
+    background-position: center ;
+    background-size : cover ;  */
+    display: flex ;
+    flex-direction : row ;
+    flex-wrap : wrap ;
+    justify-content : space-around ;
+    text-shadow : 0px 4px 8px rgba(255,255,255,1.);
+    text-align : center ;
+    color: yellow;
+    font-size: 1.3rem ;
+    width: 90% ;
+
+}
+.weather-tile h4 {}
+
+
+.weather-item-first {
+    background-color: darkcyan ;
+    padding: 5px ;
+    border-radius: 10px ;
+    flex-basis : 28% ;
+}
+
+.weather-item {
+    background-color: darkcyan ;
+    padding: 5px ;
+    border-radius: 10px ;
+    flex-basis : 22% ;
+    text-align : center;
+}
+
+@media (max-width:800px){
+
+    .toplevel {
+        flex-direction: column ;
+    }
+    .navbar {
+        font-size : 1.2rem ;
+        align-self: center ;
+    }
+    .navbar a{
+        padding:5px ;
+        color:white;
+        display: inline-block ;
+        text-align: center;
+    }
 }
