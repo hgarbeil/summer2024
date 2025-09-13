@@ -1,0 +1,11 @@
+Name, Type, Latitude, Longitude, Comment,Website
+Brooklyn Botanic Gardens,Museum, 40.6686, -73.9645,Botanic garden,https://www.bbg.org
+Prospect Park,Park,40.6602, -73.9690,Park,https://en.wikipedia.org/wiki/Prospect_Park_(Brooklyn)
+DUMBO,Neighborhood,40.7033, -73.9881,Neighborhood under Manhattan Bridge,https://en.wikipedia.org/wiki/Dumbo,_Brooklyn
+Coney Island,Park,40.5755, -73.9707,
+Ithaca,Town, 42.4440, -76.5019,Home,https://www.visitkitsap.com/indianola
+Buttermilk Falls State Park,Camp,42.4169,-76.5212,Camping State Park,https://parks.ny.gov/parks/151/details.aspx
+Robert Treman State Park,Camp,42.40259584,-76.54801967,Camping State Park,https://parks.ny.gov/parks/135/
+Taughannock Falls State Park,Camp,42.533184,-76.616402,Camping State Park,https://parks.ny.gov/parks/62/details.aspx
+Museum of the Earth,Museum, 42.4665,-76.5360,Paleontology,https://www.museumoftheearth.org/
+Cascadilla Gorge Trail,Hike,42.442997,-76.494438,Connects Cornell U to Ithaca, https://uncoveringnewyork.com/cascadilla-gorge-ithaca/#:~:text=There%20are%20several%20places%20to,coordinates%3A%2042.442997%2C%20%2D76.494438.

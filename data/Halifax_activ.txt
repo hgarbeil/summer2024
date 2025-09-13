@@ -1,0 +1,12 @@
+Name, Type, Latitude, Longitude, Comment,Website
+Halifax,Town, 44.651,-63.5923,Home,https://discoverhalifaxns.com/things-to-do/the-first-timers-guide-to-halifax/
+Lunenburg,Town,44.3780, -64.3144,UNESCO British colonial settlement, https://novascotia.com/explore-by-region/south-shore/lunenburg/
+Peggy's Cove,Hike,44.4939,-63.9140,Hike,https://novascotia.com/listing/peggys-cove-lighthouse-and-village/
+Salt Marsh Trail,Hike,44.6622, -63.4035,Easy popular hike,https://www.halifaxtrails.ca/salt-marsh-trail/
+Taylor Head Provincial Park,Park,44.8476, -62.5713,Provincial park on peninsula with numerous hikes and facilities,https://parks.novascotia.ca/park/taylor-head
+Kejimkujik Nat. Park,Park,44.4352, -65.2137,Large national park with lots of hike wilderness and large lakes etc.,https://parks.canada.ca/pn-np/ns/kejimkujik
+Truro,Town,45.3646, -63.2765,Bay of Fundy tides and base for central NS, https://novascotia.com/explore-by-region/bay-of-fundy-annapolis-valley/truro/
+Shubie River Wranglers,Raft,45.2495, -63.4433,Activity - Tidal Bore Rafting, https://shubieriverwranglers.ca/
+Evan's Seafood,Food, 44.6644, -63.5703,Sea Food Restaurant at Ferry Landing,https://www.evansfreshseafoods.com/contact/
+Dave's Lobster,Food,44.647,-63.57,Sea Food Restaurant on Waterfront,https://www.daveslobster.com/
+Franey Trail,Hike,46.6609,-60.4113,Moderate eastside CBreton hike,https://www.alltrails.com/trail/canada/nova-scotia/franey-trail

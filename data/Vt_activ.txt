@@ -1,0 +1,3 @@
+Name, Type, Latitude, Longitude, Comment,Website
+Middlebury,Town,44.0151,-73.1670,Town,https://www.townofmiddlebury.org/explore/index.php
+Burlington,Town,44.4759,-73.2121,Town,https://www.helloburlingtonvt.com/

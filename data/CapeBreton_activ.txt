@@ -1,0 +1,11 @@
+Name, Type, Latitude, Longitude, Comment,Website
+Ingonish,Town,46.6408, -60.4040,Town,https://experienceingonish.ca
+Cheticamp,Town,46.6250, -61.0148,Western entrance to CB Highlands NP,https://www.cheticamp.ca/en/
+Baddeck,Town,46.0998, -60.7537,Access point to Cabot Cove,https://www.cbisland.com/blog/baddeck-the-beginning-and-the-end-of-the-cabot-trail/ 
+Pleasant Bay,Town,46.8231, -60.7999,West coast Cabot Trail community,https://www.cbisland.com/blog/pleasant-bay/
+Glace Bay,Town, 46.1969, -59.9570,Town, www.higp.hawaii.edu
+Inverness,Town,46.2308, -61.3044,Town,https://novascotia.com/explore-by-region/cape-breton-island/inverness/
+Celtic Shores Coastal Trail,Hike,45.647919, -61.41228,Hike,https://novascotia.com/listing/celtic-shores-coastal-trail/
+Cape Breton Highlands National Park,Park,46.7383, -60.6510,National Park stuff,https://parks.canada.ca/pn-np/ns/cbreton
+Skyline Trail,Hike,46.7420, -60.8810,8.2km loop trail to headland cliffs,https://parks.canada.ca/pn-np/ns/cbreton/activ/randonnee-hiking/skyline
+Middle Head Trail,Hike,46.655391,-60.372142,Narrow peninsula coastal head hike,https://parks.canada.ca/pn-np/ns/cbreton/activ/randonnee-hiking/middlehead
