@@ -9,10 +9,9 @@ var data = '' ;
 var towns=[] ;
 let regionNum = 0 ;
 let weatherMode = false ;
-let cent_coords = [[47.7470, -122.5257],[47.0379, -122.9007],[44.0521, -123.0868],[41.8309286, -87.59272],
-[43.6532,-79.3832]] ;
-
+let cent_coords = [[44.651,-63.5923],[40.6782, -73.9442]];
 let wmodata_ok ;
+
 fetch ('data/descriptions.json')
         
         .then(res =>res.json()).then (wmodata=> {
@@ -54,7 +53,7 @@ var updateWeather = function getWeather (latitude, longitude){
         latitude = latitude * 1. ;
         longitude = longitude * 1. ;
         console.log (latitude+ "  "+ longitude )
-        fetch(`https://api.open-meteo.com/v1/forecast?wind_speed_unit=mph&weather_code,precipitation_unit=inch&temperature_unit=fahrenheit&latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,cloud_cover,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_sum,wind_speed_10m_max`)
+        fetch(`https://api.open-meteo.com/v1/forecast?wind_speed_unit=mph&timezone=auto&weather_code,precipitation_unit=inch&temperature_unit=fahrenheit&latitude=${latitude}&longitude=${longitude}&current=precipitation,temperature_2m,relative_humidity_2m,cloud_cover,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_sum,wind_speed_10m_max`)
         // fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=imperial&exclude=hourly,minutely&appid=${apikey}`)
         .then(res =>res.json()).then (data=> {
             showWeatherData(data) ;
@@ -83,8 +82,13 @@ function showWeatherData (data){
     let curtemp = "Temp : " + data.current.temperature_2m ;
     let curwind = "Wind Speed : "+data.current.wind_speed_10m ;
     let currelh = "Relative Humidity : " + data.current.relative_humidity_2m ;
+    let curprecip ="Precip past hour : " + data.current.precipitation  ;
     
     curicon=wmodata_ok[data.daily.weather_code[0]].day.image ;
+    curdesc=wmodata_ok[data.daily.weather_code[0]].day.description ;
+    day1desc=wmodata_ok[data.daily.weather_code[1]].day.description ;
+    day2desc=wmodata_ok[data.daily.weather_code[2]].day.description ;
+    day3desc=wmodata_ok[data.daily.weather_code[3]].day.description ;
     day1icon=wmodata_ok[data.daily.weather_code[1]].day.image ;
     day2icon=wmodata_ok[data.daily.weather_code[2]].day.image ;
     day3icon=wmodata_ok[data.daily.weather_code[3]].day.image ;
@@ -103,39 +107,46 @@ function showWeatherData (data){
     let day3templo = "Temp Low  : " + data.daily.temperature_2m_min[3];
     
     mainEl.innerHTML = `
+    <div><h2>Weather for Town</h2><div>
     <div class="weather-tile">
 
     <div class="weather-item-first">
         <h4>Currently</h4>
         <img src=${curicon}  class="weather-icon" alt='Icon depicting current weather.'>
+        <div>${curdesc}</div>
         <div>${curtime}</div>
         <div>${curtemp}&#176;F</div>
+        <div>${curprecip}"</div>
         <div>${currelh}%</div>
         <div>${curwind} MPH</div>
+
     </div>
     <div class="weather-item">
         <h4>Tomorrow: </h4>
         <img src=${day1icon}  class="weather-icon" alt='Icon depicting tomorrow weather.'>
+        <div>${day1desc}</div>
         <div>${day1time}</div>
         <div>${day1templo}&#176;F</div>
         <div>${day1temphi}&#176;F</div>
-        <div>${day1precip} inches</div>
+        <div>${day1precip}"</div>
     </div>
     <div class="weather-item">
-        <h4>Day After: </h4>
+        <h4>Day 2: </h4>
         <img src=${day2icon}  class="weather-icon" alt='Icon depicting tomorrow weather.'>
+        <div>${day2desc}</div>
         <div>${day2time}</div>
         <div>${day2templo}&#176;F</div>
         <div>${day2temphi}&#176;F</div>
-        <div>${day2precip} inches</div>
+        <div>${day2precip}"</div>
     </div>
     <div class="weather-item">
-    <h4>2nd Day After: </h4>
+    <h4>Day 3: </h4>
     <img src=${day3icon}  class="weather-icon" alt='Icon depicting tomorrow weather.'>
+    <div>${day3desc}</div>
     <div>${day3time}</div>
     <div>${day3templo}&#176;F</div>
     <div>${day3temphi}&#176;F</div>
-    <div>${day3precip} inches</div>
+    <div>${day3precip}"</div>
 </div>
 
     </div>

@@ -1,9 +1,9 @@
 
 let zoomNum = 10 ;
-let regions =['Wash-Indianola','Wash-Olympia','Oregon-Eugene','Chicago','Toronto'] ;
-let impref = ['Washington','Washington','Oregon','Chicago','Toronto'] ;
-let dates =['July 25 - Aug 12', 'Aug 15 - 18', 'Aug 12 - 15','Aug 21 - 28', 'Aug 28 - Sep 15'] ;
-let zoomList = [10,10,14,12,13] ;
+let regions =['Halifax','Brooklyn'] ;
+let impref = ['Halifax, NS','Brooklyn'] ;
+let dates =['September 14 - 17', 'Sep 19 - Oct 3'] ;
+let zoomList = [10,13] ;
 let regionName = regions[regionNum] ;
 const mainEl = document.querySelector('.main-content') ;
 // const selectedText = document.querySelector('.selected')
@@ -19,7 +19,7 @@ const bodyEl = document.getElementsByTagName('body')[0] ;
 const navItems = document.querySelectorAll('.navarea') ;
 
 
-let activFile = "data/Wash_activ.txt";
+let activFile = "data/NY_activ.txt";
 let dateString = dates[0] ;
 
 
@@ -34,24 +34,36 @@ var homeIcon = L.icon({
     iconUrl: 'data/bed-bug.png',
     iconSize: [32,32]
 });
-
+var museumIcon = L.icon({
+    iconUrl: 'data/icons/icons8-museum-50.png',
+    iconSize: [32,32]
+});
 var hikeIcon = L.icon({
-    iconUrl: 'data/icons8-hiking-50.png',
+    iconUrl: 'data/icons/icons8-hiking-50.png',
     iconSize: [32,32]
 });
 
 var townIcon = L.icon({
-    iconUrl: 'data/icons8-town-24.png',
+    iconUrl: 'data/icons/icons8-town-24.png',
     iconSize: [32,32]
 });
 var parkIcon =  L.icon({
-    iconUrl: 'data/icons8-park-50.png',
+    iconUrl: 'data/icons/icons8-park-50.png',
     iconSize: [32,32]
 });
 var schoolIcon =  L.icon({
-    iconUrl: 'data/icons8-university-30.png',
+    iconUrl: 'data/icons/icons8-university-30.png',
     iconSize: [32,32]
 });
+var campIcon = L.icon({
+    iconUrl: 'data/icons/icons8-tent-70.png',
+    iconSize: [32,32]
+});
+var raftIcon = L.icon({
+    iconUrl: 'data/icons/icons8-raft-30.png',
+    iconSize: [32,32]
+});
+
 
 
 function showWeather(boolbaby){
@@ -82,16 +94,16 @@ function loadArea (id){
     navItems[id].classList = "navarea selected" ;
     if (weatherMode){
         showWeather(true);
-        return ;
+        
     }
     if (regionNum==0){
-        activFile = "data/Wash_activ.txt"
+        activFile = "data/Halifax_activ.txt"
     }
     if (regionNum==1){
-        activFile = "data/olympia_activ.txt"
+        activFile = "data/NY_activ.txt"
     }
     if (regionNum==2){
-        activFile = "data/eugene_activ.txt"
+        activFile = "data/Keene_activ.txt"
     }
     if (regionNum==3){
         activFile = "data/chicago_activ.txt"
@@ -105,6 +117,10 @@ function loadArea (id){
     dateEl.innerHTML = dateString ;
     let bimage =  'url("https://source.unsplash.com/1200x1200/?'+impref[id]+'?summer")' ;
     bodyEl.style.backgroundImage = bimage ;
+
+    if(weatherMode){
+        return ;
+    }
     
     console.log (id+"  : "+activFile);
     loadMap(regionNum) ;
@@ -127,9 +143,13 @@ function loadMap (regionNumber){
 
 function loadTable (){
     //console.log("opening "+activFile);
+    if (tableEl.hasChildNodes()) {
+        tableEl.removeChild(tableEl.children[0]);
+    }
+    $ajaxUtils.sendGetRequest (activFile, function(responseText){
+
     theadEl.innerHTML="" ;
     tbodyEl.innerHTML="" ;
-    $ajaxUtils.sendGetRequest (activFile, function(responseText){
         //console.log(responseText);
         var lines = responseText.split('\n');
         const firstline = lines.shift () ;
@@ -177,6 +197,15 @@ function loadTable (){
             }
             if (cells[1]=='School'){
                 markerOptions.icon = schoolIcon ;
+            }
+            if (cells[1]=='Camp'){
+                markerOptions.icon = campIcon ;
+            }
+            if (cells[1]=='Museum'){
+                markerOptions.icon = museumIcon ;
+            }
+             if (cells[1]=='Raft'){
+                markerOptions.icon = raftIcon ;
             }
             // console.log(cells[2]+' Lon : '+cells[3])
             var marker = L.marker([cells[2],cells[3]],markerOptions)
